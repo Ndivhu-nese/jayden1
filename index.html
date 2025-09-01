@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Engagement on Food Security</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #2E7D32;
+      --primary-light: #4CAF50;
+      --secondary: #3E655C;
+      --accent: #FF9800;
+      --light: #f8f9fa;
+      --dark: #2c3e50;
+      --gray: #6c757d;
+      --light-gray: #e9ecef;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background-color: var(--light);
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    
+    /* Header */
+    header {
+       background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                  /* REPLACE THIS URL WITH YOUR HEADER IMAGE PATH */
+                  url('background.jpg') no-repeat center center/cover;
+      color: white;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    header p {
+      font-size: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    /* Navigation */
+    nav {
+      background: var(--primary);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: white;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-links li {
+      margin-left: 1.5rem;
+    }
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+    
+    /* Hero Section */
+    .hero {
+      background-color: var(--light);
+      padding: 4rem 0;
+      text-align: center;
+    }
+    
+    .hero h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      color: var(--gray);
+    }
+    
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 0.8rem 1.8rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    
+    .btn:hover {
+      background: var(--primary-light);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Academic Info Section */
+    .academic-info {
+      padding: 5rem 0;
+      background-color: var(--light);
+    }
+    
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .info-card {
+      background: white;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .info-card h3 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--primary-light);
+    }
+    
+    .info-item {
+      margin-bottom: 1rem;
+    }
+    
+    .info-item strong {
+      color: var(--primary);
+    }
+    
+    /* Group Members Table */
+    .members-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0, 极速加速器, 0, 0.05);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .members-table th, .members-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--light-gray);
+    }
+    
+    .members-table th {
+      background-color: var(--primary);
+      color: white;
+    }
+    
+    .members-table tr:nth-child(even) {
+      background-color: var(--light);
+    }
+    
+    .members-table tr:hover {
+      background-color: #e8f5e9;
+    }
+    
+    /* Introduction Section */
+    .introduction {
+      padding: 5rem 0;
+      background-color: white;
+    }
+    
+    .intro-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .intro-content p {
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+    
+    /* Projects Section */
+    .projects {
+      padding: 5rem 0;
+      background-color: var(--light);
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    
+    .section-title p {
+      color: var(--gray);
+      max-width: 极速加速器px;
+      margin: 0 auto;
+    }
+    
+    .project-detail {
+      background: white;
+      border-radius: 10px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .project-detail h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--primary);
+      padding-left: 1rem;
+    }
+    
+    .project-detail p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    
+    .benefits-list {
+      list-style-type: none;
+      margin: 1.5rem 0;
+    }
+    
+    .benefits-list li {
+      margin-bottom: 0.8rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    
+    .benefits-list li:before {
+      content: "✓";
+      color: var(--primary);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+    
+    /* Image Placeholders */
+    .image-placeholder {
+      height: 450px;
+      background-color: var(--light-gray);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1.5rem 0;
+      color: var(--gray);
+      font-style: italic;
+       
+    }
+    
+    /* Advantages Section */
+    .advantages {
+      padding: 5rem 0;
+      background-color: white;
+    }
+    
+    .advantages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .advantage-card {
+      background: var(--light);
+      border-radius: 10px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+    
+    .advantage-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .advantage-card i {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    
+    .advantage-card h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    
+    /* Challenges Section */
+    .challenges {
+      padding: 5rem 0;
+      background-color: var(--light);
+    }
+    
+    .challenge-item {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 5极速加速器 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .极速加速器-item h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    
+    .challenge-item p {
+      margin-bottom: 1rem;
+    }
+    
+    .solutions {
+      background: #e8f5e9;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+    
+    .solutions h4 {
+      color: var(--primary);
+      margin-bottom: 0.5极速加速器;
+    }
+    
+    /* Recommendations Section */
+    .recommendations {
+      padding: 5rem 0;
+      background-color: white;
+    }
+    
+    .recommendations-list {
+      list-style-type: none;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .recommendations-list li {
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      background: var(--light);
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .recommendations-list li strong {
+      color: var(--primary);
+    }
+    
+    /* Conclusion Section */
+    .conclusion {
+      padding: 5rem 0;
+      background-color: var(--light);
+      text-align: center;
+    }
+    
+    .conclusion-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .conclusion-content p {
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+    
+    /* References Section */
+    .references {
+      padding: 5rem 0;
+      background-color: white;
+    }
+    
+    .references-list {
+      list-style-type: none;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .references-list极速加速器 li {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: var(--light);
+      border-radius: 8px;
+      border-left: 4px solid var(--primary);
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 3rem 0 1rem;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .footer-section h3 {
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+    }
+    
+    .footer-section ul {
+      list-style: none;
+    }
+    
+极速加速器    .footer-section ul li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-section a {
+      color: #ddd;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-section a:hover {
+      color: var(--accent);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      
+      header p {
+        font-size: 1.2rem;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .hero h2 {
+        font-size: 2rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1>Community Engagement on Food Security</h1>
+      <p>Through Sustainable Garden Projects</p>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <div class="logo">FoodSecurity</div>
+      <ul class="nav-links">
+        <li><a href="#academic">Academic Info</a></li>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#advantages">Advantages</a></li>
+        <li><a href="#challenges">Challenges</a></li>
+        <li><a href="#recommendations">Recommendations</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h2>Growing Communities Through Gardening</h2>
+      <p>We empower communities to achieve food security through sustainable gardening practices, education, and collaborative projects.</p>
+      <a href="#projects" class="btn">Explore Our Projects</a>
+    </div>
+  </section>
+
+  <!-- Academic Information Section -->
+  <section class="academic-info" id="academic">
+    <div class="container">
+      <div class="section-title">
+        <h2>Academic Information</h2>
+        <p>Details about our course, subject, and group members</p>
+      </div>
+      
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Course Details</h3>
+          <div class="info-item">
+            <strong>Course:</strong> DIPLOMA IN COMPUTER SCIENCE (extended)
+          </div>
+          <div class="info-item">
+            <strong>Subject:</strong> Communication for Academic Purpose
+          </div>
+          <div class="info-item">
+            <strong>Code:</strong> CAPF05X
+          </div>
+          <div class="info-item">
+            <strong>Class group:</strong> KA
+          </div>
+          <div class="info-item">
+            <strong>Date:</strong> 25/06/2025
+          </div>
+          <div class="info-item">
+            <strong>Lecture surname:</strong> DR SETATI
+          </div>
+          <div class="info-item">
+            <strong>Topic:</strong> COMMUNITY ENGAGEMENT ON FOOD SECURITY THROUGH GARDEN PROJECTS
+          </div>
+        </div>
+        
+        <div class="info-card">
+          <h3>Group Members</h3>
+          <table class="members-table">
+            <thead>
+              <tr>
+                <th>Surnames & Initials</th>
+                <th>Student Number</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Ravhambelani N</td><td>242099680</td></tr>
+              <tr><td>Rakgwahla BMC</td><td>241134598</td></tr>
+              <tr><td>Rakgoale MPD</td><td>241161684</td></tr>
+              <tr><td>Mkhonza NP</td><td>222323290</td></tr>
+              <tr><td>Matshidze MM</td><td>240870860</td></tr>
+              <tr><td>Mashego T</td><td>2509910</td></tr>
+              <tr><td>Zigubu SS</td><td>224916043</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="introduction" id="intro">
+    <div class="container">
+      <div class="section-title">
+        <h2>Introduction</h2>
+      </div>
+      
+      <div class="intro-content">
+        <p>Food security through gardening refers to the practice of using home, school, or community gardens to improve access to sufficient, safe, and nutritious food for individuals and families. It is a grassroots approach to enhancing food security by growing food locally, often in response to economic challenges, limited food access, or environmental concerns.</p>
+        
+        <p>Food security is a critical issue affecting millions of people worldwide. One way to address this issue is through garden projects that provide fresh produce to communities. This assignment aims to investigate existing food garden projects and develop a website to present our findings and recommendations.</p>
+        
+        <p>During our research we found five community projects of food gardening: Khayelitsha vertical gardens, Durban rooftop gardens, Home Food Gardening & Basic Health Program, School Gardens, and Community Gardening Projects.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="section-title">
+        <h2>Research Projects</h2>
+        <p>We investigated five community garden projects making a difference in food security</p>
+      </div>
+      
+      <div class="project-detail">
+        <h3>1. School Garden Project of Lane County</h3>
+        <div class="image-placeholder" style="background:
+                  url('school.jpg') no-repeat center center/cover;">
+          
+        </div>
+        <p>The School Garden Project of Lane County was formed in 2001 to help establish gardens and provide resources, professional consultation, and educational programs in local schools.</p>
+        
+        <p><strong>Goals and Objectives:</strong></p>
+        <ul class="benefits-list">
+          <li>Increase children's science knowledge</li>
+          <li>Assist children in making healthy eating choices</li>
+          <li>Teach children to be good stewards of the earth</li>
+          <li>Strengthen confidence through collaboration and cooperation</li>
+        </ul>
+        
+        <p><strong>What they do:</strong> School Garden Project programming empowers children that face food insecurity daily with the knowledge that they can grow their own food. Their programming provides a unique opportunity for students. As one of their partner teachers said, "Gardening is actually a luxury. If you don't have a yard, they don't have access".</p>
+        
+        <p>The project works with one grade level at each school, bringing students into the garden for a one-hour lesson every other week for a total of 5 weeks of lessons in the Fall and 5-7 weeks of lessons in the Spring.</p>
+      </div>
+      
+      <div class="project-detail">
+        <h3>2. Home Food Gardening & Basic Health Program</h3>
+        <div class="image-placeholder"  style="background:
+                  url('home.jpg') no-repeat center center/cover;">
+          
+        </div>
+        <p>This program teaches people极速加速器 how to grow healthy, safe food right outside their backdoors. While learning how to grow food, they also gain basic information about health and nutrition.</p>
+        
+        <p><strong>Program Structure:</strong> The 12-week training programme takes place in communities with groups of gardeners who live close to one another. This lays the foundation for developing community-based networks and support systems.</p>
+        
+        <p>During the programme, home gardeners are taught how to build soil, grow food, and use the waste around them as valuable resources in their gardens. Soil for Life provides seeds, seedlings, compost, and mulch to get the gardens going, and gardeners are taught how to plan and provide for their own future garden inputs with little or no money being spent.</p>
+        
+        <p><strong>Benefits:</strong></p>
+        <ul class="benefits-list">
+          <li>Improved food security: Gardeners can grow healthy, safe food, reducing reliance on external food sources</li>
+          <li>Increased nutrition knowledge: Gardeners gain basic information about health and nutrition</li>
+          <li>Community development: The program fosters community-based networks and support systems</li>
+          <li>Sustainable gardening practices: Gardeners learn environmentally friendly practices, reducing waste and conserving resources</li>
+        </ul>
+      </div>
+      
+      <div class="project-detail">
+        <h3>3. Durban Rooftop Gardening</h3>
+        <div class="image-placeholder"  style="background:
+                  url('kanyisa.jpg') no-repeat center center/cover;">
+          
+        </div>
+        <p>The garden was established by the eThekwini Municipality as part of its greening strategy and support for local agriculture. The 1,300 m² garden produces a variety of fruits and vegetables, including succulents, aromatic herbs, and seasonal vegetables.</p>
+        
+        <p><strong>Objectives:</strong></p>
+        <ul class="benefits-list">
+          <li>To demonstrate the possibility of producing food in large quantities in urban space</li>
+          <li>To provide a green space for relaxation and entertainment in the city center</li>
+          <li>To produce fresh food for direct consumption</li>
+          <li>To raise awareness about agriculture and urban food production</li>
+        </ul>
+        
+        <p><strong>Features:</strong> The garden is made up of several spaces, including succulent gardens, tunnels for vegetable production, and a central space for events and visitor groups. The garden uses recycled materials and showcases creative ways to grow food in containers. The garden is certified and waterproofed, ensuring a safe and sustainable growing environment.</p>
+        
+        <p><strong>Impact:</strong></p>
+        <ul class="benefits-list">
+          <li>The garden produces fresh produce that is distributed to retirement homes极速加速器 and food banks in the city center</li>
+          <li>The garden has created 6 full-time jobs for gardeners and staff极速加速器</li>
+          <li>The garden serves as a model for urban agriculture and sustainability, attracting visitors from across the country</li>
+        </ul>
+      </div>
+      
+      <div class="project-detail">
+        <h3>4. Community Gardening Projects</h3>
+        <div class="image-placeholder" style="background:
+                  url('Community\ Gardening\ Effort_\ A\ group\ of\ volunteers….jpeg') no-repeat center center/cover;" >
+          
+        </div>
+        <p>These projects upskill groups of people committed to growing food to support initiatives such as soup kitchens, child and youth care development centres, and school feeding schemes.</p>
+        
+        <p>During the course of the 5-month programme, training and regular mentorship sessions are provided. Soil for Life also provides the start-up and first replanting materials. Community Gardening Projects are sponsored by funding partners who cover the cost of training, start-up garden inputs, and mentorship.</p>
+        
+        <p>A community garden creates a shared area for learning and food production, fosters social ties, and increases food security. The potential of community gardens to enhance food security and nutrition is highlighted by the DG Murray Trust.</p>
+      </div>
+      
+      <div class="project-detail">
+        <h3>5. Khayelitsha Vertical Gardens</h3>
+        <div class="image-placeholder" style="background:
+                  url('Khayelitsha-rooftop-farm-1.webp') no-repeat center center/cover;">
+          
+        </div>
+        <p>The customers, farmers and community of Khayelitsha have lauded the agricultural work done in Khayelitsha by community organisation Abalimi Bezekhaya.</p>
+        
+        <p>A voluntary organisation established in 1982, Abalimi Bezekhaya combats poverty by growing food sustainably using organic methods. It also assists residents to set up home and community gardens, helping the farmers run micro farms. The organisation helps the farmers in planning production, maintaining the soil, planning harvests, access to seeds and seedlings, transporting the vegetables and financial services.</p>
+        
+        <p>Abalimi Bezekhaya began as a greening project, planting trees in Khayelitsha, which had no trees at the time. It developed into a food garden for the community, as the organisation realised people could not plant trees on a hungry stomach. Later, home gardens were introduced for providing nourishing food for consumption.</p>
+        
+        <p>Today, the organisation has 52 community gardens and over 3,000 household gardens feeding families and generating incomes. They have established a market for home farmers at Harvest of Hope, which markets and sells the vegetables on behalf of the farmers within all townships, from Khayelitsha through to Nyanga.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advantages Section -->
+  <section class="advantages" id="advantages">
+    <div class="container">
+      <div class="section-title">
+        <h2>Advantages of Community Garden Projects</h2>
+        <p>Community gardens provide multiple benefits beyond just food production</p>
+      </div>
+      
+      <div class="advantages-grid">
+        <div class="advantage-card">
+          <i class="fas fa-apple-alt"></i>
+          <h3>Improved Food Security</h3>
+          <p>Urban farms provide fresh, nutritious produce to the community, addressing food insecurity and promoting better health outcomes.</p>
+        </div>
+        
+        <div class="advantage-card">
+          <i class="fas fa-hand-holding-us极速加速器"></i>
+          <h3>Economic Sustainability</h3>
+          <p>Farms generate consistent income through harvests, creating economic opportunities for the community and promoting sustainable farming practices.</p>
+        </div>
+        
+        <div class="advantage-card">
+          <i class="fas fa-briefcase"></i>
+          <h3>Job Creation</h3>
+          <p>Farms employ permanent workers, providing skills training and opportunities for previously unemployed community members to work their way out of poverty.</p>
+        </div>
+        
+        <div class="advantage-card">
+          <i class="fas fa-users"></i>
+          <h3>Community Empowerment</h3>
+          <p>Farms serve as training grounds for agricultural skills, promoting community development and encouraging residents to start their own small ventures.</p>
+        </div>
+        
+        <div class="advantage-card">
+          <i class="fas fa-leaf"></i>
+          <h3>Environmental Sustainability</h3>
+          <p>Aquaponic systems use only 10% of the water required for conventional soil farming, eliminating runoff and reducing the carbon footprint.</p>
+        </div>
+        
+        <div class="advantage-card">
+          <i class="fas fa-seedling"></i>
+          <h3>Model for Urban Agriculture</h3>
+          <p>Farms serve as models for resource-efficient urban agriculture, showcasing possibilities for sustainable farming practices in urban areas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Challenges Section -->
+  <section class="challenges" id="challenges">
+    <div class="container">
+      <div class="section-title">
+        <h2>Challenges & Solutions</h2>
+        <p>Common obstacles faced by community gardens and practical solutions</p>
+      </div>
+      
+      <div class="challenge-item">
+        <h3>Challenge 1: Limited Access to Land</h3>
+        <p><strong>Problem:</strong> Urbanization and land scarcity make it difficult for communities to find suitable spaces for gardening. High land costs prevent low-income households from owning or leasing land for cultivation.</p>
+        
+        <div class="solutions">
+          <h4>Solutions:</h4>
+          <p><strong>Utilize Underused Spaces:</strong> Convert rooftops, balconies, and vacant lots into gardens.</p>
+          <p><strong>Community Land Sharing:</strong> Partner with local governments or NGOs to secure public land for gardening.</p>
+          <p><strong>Vertical and Container Gardening:</strong> Grow plants in stacked containers or vertical structures to save space.</p>
+        </div>
+      </div>
+      
+      <div class="challenge-item">
+        <h3>Challenge 2: Water Scarcity and Poor Irrigation</h3>
+        <p><strong>Problem:</strong> Drought-prone regions struggle with inconsistent water supply. Traditional irrigation methods waste water, making gardening unsustainable.</p>
+        
+        <div class="solutions">
+          <h4>Solutions:</h4>
+          <p><strong>Rainwater Harvesting:</strong> Install storage tanks to collect and reuse rainwater.</p>
+          <p><strong>Drip Irrigation Systems:</strong> Use water-efficient drip irrigation to minimize waste.</p>
+          <p><strong>Greywater Recycling:</strong> Reuse household water (from sinks/showers) for irrigation after filtration.</p>
+        </div>
+      </div>
+      
+      <div class="challenge-item">
+        <h3>Challenge 3: Lack of Funding and Resources</h3>
+        <p><strong>Problem:</strong> Many community gardens fail due to insufficient funds for seeds, tools, and maintenance. Limited access to fertilizers and pest control methods reduces crop yield.</p>
+        
+        <div class="solutions">
+          <h4>Solutions:</h4>
+          <p><strong>Government and NGO Grants:</strong> Apply for agricultural funding programs.</极速加速器>
+          <p><strong>Community Fundraising:</strong> Organize local events or crowdfunding campaigns.</p>
+          <p><strong>Resource Sharing:</strong> Establish tool-lending programs within the community.</p>
+        </div>
+      </div>
+      
+      <div class="challenge-item">
+        <h3>Challenge 4: Pest and Disease Management</h3>
+        <p><strong>Problem:</strong> Pests and plant diseases can destroy crops, leading to food loss. Overuse of chemical pesticides harms the environment and human health.</p>
+        
+        <div class="solutions">
+          <h4>Solutions:</h4>
+          <p><strong>Companion Planting:</strong> Grow pest-repelling plants (e.g., marigolds with tomatoes).</p>
+          <p><strong>Natural Pest Control:</strong> Use neem oil, garlic spray, or beneficial insects.</p>
+          <p><strong>Crop Rotation:</strong> Prevent soil depletion and disease buildup by rotating crops seasonally.</p>
+        </div>
+      </div>
+      
+      <div class="challenge-item">
+        <h3>Challenge 5: Lack of Knowledge and Training</h3>
+        <p><strong>Problem:</strong> Many community members lack gardening skills, leading poor crop yields. Misuse of fertilizers and improper planting techniques reduce productivity.</p>
+        
+        <div class="solutions">
+          <h4>Solutions:</h4>
+          <p><strong>Workshops and Training:</strong> Partner with agricultural experts to teach best practices.</p>
+          <p><strong>Online Resources:</strong> Provide access free gardening tutorials and mobile apps.</p>
+          <p><strong>Mentorship Programs:</strong> Experienced gardeners can guide beginners.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommendations Section -->
+  <section class="recommendations" id="recommendations">
+    <div class="container">
+      <div class="section-title">
+        <h2>Recommendations</h2>
+        <p>Key recommendations for successful community garden projects</p>
+      </div>
+      
+      <ul class="recommendations-list">
+        <li>
+          <strong>Community engagement:</strong> Community engagement is essential for the success of food garden projects. We recommend involving local communities in the planning and implementation of garden projects.
+        </li>
+        <li>
+          <strong>Sustainable gardening practices:</strong> Sustainable gardening practices, such as using rainwater harvesting and composting, can help reduce the environmental impact of gardening.
+        </li>
+        <li>
+          <strong>Education and training:</strong> Education and training are essential for the success of food garden projects. We recommend providing training and workshops for community members on gardening practices and nutrition.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Conclusion Section -->
+  <section class="conclusion">
+    <div class="container">
+      <div class="section-title">
+        <h2>Conclusion</h2>
+      </div>
+      
+      <div class="conclusion-content">
+        <p>Food security is a critical issue that affects millions of people worldwide. Garden projects can provide fresh produce to communities and help address food insecurity. Our research findings and recommendations highlight the importance of community engagement, sustainable gardening practices, and education and training in the success极速加速器 food garden projects.</p>
+        
+        <p>Through initiatives like school gardens, home food gardening programs, rooftop gardens, and community gardening projects, we can create sustainable solutions to food insecurity while empowering communities, creating economic opportunities, and promoting environmental sustainability.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- References Section -->
+  <section class="references">
+    <div class="container">
+      <div class="section-title">
+        <h2>References</h2>
+      </div>
+      
+      <ul class="references-list">
+        <li>Abalimi Bezekhaya. (2024). <em>Urban Farming in Khayelitsha</em>. Retrieved July 25, 2025, from The Life-Changing Power of Urban Farming: https://vocal.media/earth/the-life-changing-power-of-urban-farming</li>
+        
+        <li>Soil for Life. (2024). <em>Home Food Gardening & Basic Health Programme</em>. Retrieved July 25, 2025, from Soil for Life Official Website: https://soilfor.co.za/home-food-gardening/</li>
+        
+        <li>eThekwini Municipality. (2024). <em>Durban Rooftop Gardens Initiative</em>. Retrieved July 25, 2025, from The Life-Changing Power of Urban Farming: https://vocal.media/earth/the-life-changing-power-of-urban-farming</li>
+        
+        <li>DG Murray Trust. (2023). <em>Community Gardens and Food Security</em>. Retrieved July 25, 2025, from Urban Agriculture and the Sustainability Nexus in South Africa: https://link.springer.com/article/10.1007/s12132-023-09480-4</li>
+        
+        <li>School Garden Project of Lane County. (). <em>Educational Impact of School Gardens</em>. Retrieved July 25, 2025, from Bibliometric Mapping School Garden Studies: https://www.mdpi.com/2311-7524/9/3/359</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>FoodSecurity</h3>
+          <p>Empowering communities through sustainable gardening initiatives to achieve food security.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#academic">Academic Info</a></li>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#advantages">Advantages</a></li>
+            <li><a href="#challenges">Challenges</a></li>
+            <li><a href="#recommendations">Recommendations</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>123 Garden Street, Community Town</p>
+          <p>Email: info@foodsecurity.org</p>
+          <p>Phone: +27 123 456 789</p>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2025 Community Food Security Research | Designed for Academic Purposes</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Sticky navigation
+    window.addEventListener('scroll', function() {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 100) {
+        nav.style.background = 'rgba(46, 125, 50, 0.95)';
+        nav.style.padding = '0.7rem 0';
+      } else {
+        nav.style.background = 'var(--primary)';
+        nav.style.padding = '1rem 0';
+      }
+    });
+  </script>
+</body>
+</html>
